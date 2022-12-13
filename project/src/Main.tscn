@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Bat.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Bat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Main.gd" type="Script" id=2]
+[ext_resource path="res://src/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 32.75 )
@@ -22,9 +22,6 @@ margin_right = 1023.0
 margin_bottom = 601.0
 rect_pivot_offset = Vector2( 440, 301 )
 color = Color( 0.215686, 0.215686, 0.215686, 1 )
-
-[node name="Bat" parent="." instance=ExtResource( 1 )]
-position = Vector2( 46, 306 )
 
 [node name="WallTop" type="StaticBody2D" parent="."]
 
@@ -94,6 +91,9 @@ margin_top = 246.0
 margin_right = 558.0
 margin_bottom = 260.0
 text = "First to 10 wins!"
+
+[node name="Bat" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 313 )
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="body_entered" from="PlayerGoal" to="." method="_on_PlayerGoal_body_entered"]
