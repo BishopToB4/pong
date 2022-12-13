@@ -5,15 +5,24 @@ export(PackedScene) var ball_scene
 var ball
 var enemy_score = 0
 var player_score = 0
+var spawn_timer
 
 func _ready():
 	randomize()
-
+	
+func _process(delta):
+	if spawn_timer != null && spawn_timer.time_left > 0:
+		$TimerLabel.text = str(int(spawn_timer.time_left) + 1)		
+	
 func spawnBall():
 	var ball = ball_scene.instance()
-	ball.position = $BallSpawnLocation.position	
-	yield(get_tree().create_timer(1.0), "timeout")
+	ball.position = $BallSpawnLocation.position
+	$TimerLabel.show()
+	spawn_timer = get_tree().create_timer(2)
+	yield(spawn_timer, "timeout")
+	$TimerLabel.hide()
 	add_child(ball)
+
 
 func _on_Start_pressed():
 	spawnBall()
@@ -35,8 +44,7 @@ func _on_PlayerGoal_body_entered(body):
 			$Instructions.show()
 			$Start.text = "Play Again"
 			$Start.show()
-		else:	
-			yield(get_tree().create_timer(1.0), "timeout")
+		else:
 			spawnBall()
 
 func _on_EnemyGoal_body_entered(body):

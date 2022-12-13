@@ -99,6 +99,16 @@ position = Vector2( 64, 313 )
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
+[node name="TimerLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 456.0
+margin_top = 149.0
+margin_right = 552.0
+margin_bottom = 163.0
+align = 1
+valign = 1
+
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="body_entered" from="PlayerGoal" to="." method="_on_PlayerGoal_body_entered"]
 [connection signal="body_entered" from="EnemyGoal" to="." method="_on_EnemyGoal_body_entered"]
