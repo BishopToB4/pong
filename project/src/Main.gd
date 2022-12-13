@@ -26,6 +26,7 @@ func _on_Start_pressed():
 	
 func _on_PlayerGoal_body_entered(body):
 	if body == $Ball:
+		$ScoreSound.play()
 		update_enemy_score()
 		$Ball.queue_free()
 		remove_child($Ball)
@@ -40,6 +41,7 @@ func _on_PlayerGoal_body_entered(body):
 
 func _on_EnemyGoal_body_entered(body):
 	if body == $Ball:
+		$ScoreSound.play()
 		update_player_score()
 		$Ball.queue_free()
 		remove_child($Ball)

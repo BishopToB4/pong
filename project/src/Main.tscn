@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Bat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/ping_pong_8bit_plop.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 32.75 )
@@ -94,6 +95,9 @@ text = "First to 10 wins!"
 
 [node name="Bat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, 313 )
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 [connection signal="body_entered" from="PlayerGoal" to="." method="_on_PlayerGoal_body_entered"]
