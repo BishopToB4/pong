@@ -22,3 +22,9 @@ shape = SubResource( 1 )
 
 [node name="BounceNoise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="PaddleCollisionTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="PaddleCollisionTimer" to="." method="_on_PaddleCollisionTimer_timeout"]

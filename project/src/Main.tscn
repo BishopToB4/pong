@@ -17,16 +17,16 @@ font_data = ExtResource( 6 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 300 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 6 )
+
 [sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = ExtResource( 6 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 25
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -60,7 +60,7 @@ shape = SubResource( 1 )
 [node name="BallSpawnLocation" type="Position2D" parent="."]
 position = Vector2( 509, 306 )
 
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
+[node name="Enemy" parent="." groups=["PaddleGroup"] instance=ExtResource( 4 )]
 position = Vector2( 945, 306 )
 
 [node name="Start" type="Button" parent="."]
@@ -94,22 +94,6 @@ __meta__ = {
 position = Vector2( -32, 300 )
 shape = SubResource( 2 )
 
-[node name="PlayerScoreLabel" type="Label" parent="."]
-margin_left = 62.0
-margin_top = 39.0
-margin_right = 113.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 5 )
-text = "Player Score: 0"
-
-[node name="EnemyScoreLabel" type="Label" parent="."]
-margin_left = 840.0
-margin_top = 39.0
-margin_right = 938.0
-margin_bottom = 53.0
-custom_fonts/font = SubResource( 6 )
-text = "Enemy Score: 0"
-
 [node name="Instructions" type="Label" parent="."]
 margin_left = 452.0
 margin_top = 236.0
@@ -119,8 +103,24 @@ custom_fonts/font = SubResource( 3 )
 text = "First to 10 wins!"
 align = 1
 
-[node name="Bat" parent="." instance=ExtResource( 1 )]
+[node name="Bat" parent="." groups=["PaddleGroup"] instance=ExtResource( 1 )]
 position = Vector2( 64, 313 )
+
+[node name="PlayerScoreLabel" type="Label" parent="."]
+margin_left = 62.0
+margin_top = 39.0
+margin_right = 143.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 5 )
+text = "Player Score: 0"
+
+[node name="EnemyScoreLabel" type="Label" parent="."]
+margin_left = 840.0
+margin_top = 39.0
+margin_right = 938.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 6 )
+text = "Enemy Score: 0"
 
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
