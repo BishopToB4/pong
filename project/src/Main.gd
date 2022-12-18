@@ -11,6 +11,8 @@ func _ready():
 	randomize()
 	
 func _process(delta):
+	$Bat.position.x = 47
+	$Enemy.position.x = 1210
 	if spawn_timer != null && spawn_timer.time_left > 0:
 		$TimerLabel.text = str(int(spawn_timer.time_left) + 1)		
 	

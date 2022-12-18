@@ -47,12 +47,16 @@ rect_pivot_offset = Vector2( 440, 301 )
 color = Color( 0.215686, 0.215686, 0.215686, 1 )
 
 [node name="WallTop" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Top" type="CollisionShape2D" parent="WallTop"]
 position = Vector2( 640, -30.0625 )
 shape = SubResource( 1 )
 
 [node name="WallBottom" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="Bottom" type="CollisionShape2D" parent="WallBottom"]
 position = Vector2( 640, 750 )
