@@ -8,29 +8,29 @@
 [ext_resource path="res://assets/LeagueGothic-Regular.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512, 32.75 )
+extents = Vector2( 640, 29.9375 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 27
+size = 35
 font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 300 )
+extents = Vector2( 32, 359.5 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 25
+size = 40
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 20
+size = 30
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 20
+size = 30
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=7]
-size = 35
+size = 45
 font_data = ExtResource( 6 )
 
 [node name="Main" type="Node2D"]
@@ -40,85 +40,86 @@ ball_scene = ExtResource( 3 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1023.0
-margin_bottom = 601.0
+margin_right = 1280.0
+margin_bottom = 720.0
 rect_pivot_offset = Vector2( 440, 301 )
 color = Color( 0.215686, 0.215686, 0.215686, 1 )
 
 [node name="WallTop" type="StaticBody2D" parent="."]
 
 [node name="Top" type="CollisionShape2D" parent="WallTop"]
-position = Vector2( 512, -32.75 )
+position = Vector2( 640, -30.0625 )
 shape = SubResource( 1 )
 
 [node name="WallBottom" type="StaticBody2D" parent="."]
 
 [node name="Bottom" type="CollisionShape2D" parent="WallBottom"]
-position = Vector2( 512, 633 )
+position = Vector2( 640, 750 )
 shape = SubResource( 1 )
 
 [node name="BallSpawnLocation" type="Position2D" parent="."]
-position = Vector2( 509, 306 )
+position = Vector2( 640, 360 )
 
 [node name="Enemy" parent="." groups=["PaddleGroup"] instance=ExtResource( 4 )]
-position = Vector2( 945, 306 )
+position = Vector2( 1210, 360 )
 
 [node name="Start" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 456.0
-margin_top = 280.0
-margin_right = 555.0
-margin_bottom = 322.0
+margin_left = 576.0
+margin_top = 360.0
+margin_right = 704.0
+margin_bottom = 421.0
 custom_fonts/font = SubResource( 4 )
 text = "Start!"
 
 [node name="PlayerGoal" type="Area2D" parent="."]
+position = Vector2( 0, 30 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerGoal"]
-position = Vector2( -32, 300 )
+position = Vector2( -32, 330.5 )
 shape = SubResource( 2 )
 
 [node name="EnemyGoal" type="Area2D" parent="."]
-position = Vector2( 1087, 0 )
+position = Vector2( 1344, 31 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyGoal"]
-position = Vector2( -32, 300 )
+position = Vector2( -32, 328.5 )
 shape = SubResource( 2 )
 
 [node name="Instructions" type="Label" parent="."]
-margin_left = 452.0
-margin_top = 236.0
-margin_right = 563.0
-margin_bottom = 267.0
+margin_left = 554.0
+margin_top = 294.0
+margin_right = 727.0
+margin_bottom = 343.0
 custom_fonts/font = SubResource( 3 )
 text = "First to 10 wins!"
 align = 1
 
 [node name="Bat" parent="." groups=["PaddleGroup"] instance=ExtResource( 1 )]
-position = Vector2( 64, 313 )
+position = Vector2( 64, 360 )
 
 [node name="PlayerScoreLabel" type="Label" parent="."]
-margin_left = 62.0
+margin_left = 49.0
 margin_top = 39.0
-margin_right = 143.0
+margin_right = 130.0
 margin_bottom = 64.0
 custom_fonts/font = SubResource( 5 )
 text = "Player Score: 0"
 
 [node name="EnemyScoreLabel" type="Label" parent="."]
-margin_left = 840.0
+margin_left = 1101.0
 margin_top = 39.0
-margin_right = 938.0
-margin_bottom = 64.0
+margin_right = 1226.0
+margin_bottom = 76.0
 custom_fonts/font = SubResource( 6 )
 text = "Enemy Score: 0"
 
@@ -128,10 +129,10 @@ stream = ExtResource( 5 )
 [node name="TimerLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 456.0
-margin_top = 149.0
-margin_right = 552.0
-margin_bottom = 163.0
+margin_left = 592.0
+margin_top = 166.0
+margin_right = 688.0
+margin_bottom = 209.0
 custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
