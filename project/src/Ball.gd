@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var velocity = Vector2.ZERO
-var speed = 700
+var speed = 900
 var can_hit = true
 
 func _ready():
