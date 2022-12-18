@@ -1,16 +1,37 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/Bat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Main.gd" type="Script" id=2]
 [ext_resource path="res://src/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/ping_pong_8bit_plop.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/LeagueGothic-Regular.otf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 512, 32.75 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 27
+font_data = ExtResource( 6 )
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32, 300 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 25
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 35
+font_data = ExtResource( 6 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
@@ -51,6 +72,7 @@ margin_left = 456.0
 margin_top = 280.0
 margin_right = 555.0
 margin_bottom = 322.0
+custom_fonts/font = SubResource( 4 )
 text = "Start!"
 
 [node name="PlayerGoal" type="Area2D" parent="."]
@@ -77,6 +99,7 @@ margin_left = 62.0
 margin_top = 39.0
 margin_right = 113.0
 margin_bottom = 53.0
+custom_fonts/font = SubResource( 5 )
 text = "Player Score: 0"
 
 [node name="EnemyScoreLabel" type="Label" parent="."]
@@ -84,14 +107,17 @@ margin_left = 840.0
 margin_top = 39.0
 margin_right = 938.0
 margin_bottom = 53.0
+custom_fonts/font = SubResource( 6 )
 text = "Enemy Score: 0"
 
 [node name="Instructions" type="Label" parent="."]
-margin_left = 456.0
-margin_top = 246.0
-margin_right = 558.0
-margin_bottom = 260.0
+margin_left = 452.0
+margin_top = 236.0
+margin_right = 563.0
+margin_bottom = 267.0
+custom_fonts/font = SubResource( 3 )
 text = "First to 10 wins!"
+align = 1
 
 [node name="Bat" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, 313 )
@@ -106,6 +132,7 @@ margin_left = 456.0
 margin_top = 149.0
 margin_right = 552.0
 margin_bottom = 163.0
+custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 
